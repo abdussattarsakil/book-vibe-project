@@ -1,5 +1,5 @@
 
-const HomePage = () => {
+const Banner = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default Banner;
