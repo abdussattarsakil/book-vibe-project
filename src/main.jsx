@@ -1,12 +1,21 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router'
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: "hi Sakil"
+  },
+  {
+    path:"/sakil",
+    element:"hi hawlader"
+  }
+])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <h1 className='text-amber-300 btn btn-primary'>
-      Hello Sakil tailwind & daisyUi setup ok!!
-    </h1>
+    <RouterProvider router={router} />,
   </StrictMode>,
 )
