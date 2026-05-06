@@ -2,7 +2,7 @@
 const HomePage = () => {
     return (
         <div>
-            <h1 className="text-7xl text-center text-blue-500">Sakil</h1>
+            <h1 className="text-7xl text-center ">Home page</h1>
         </div>
     );
 };
