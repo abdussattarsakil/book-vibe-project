@@ -2,13 +2,14 @@ import { NavLink } from "react-router";
 
 const Navbar = () => {
     const navList=<>
-    <li><NavLink to={"/"}>Home</NavLink></li>
-    <li><NavLink to={"/books"}>Listed Books</NavLink></li>
+    <li><NavLink to={"/"} 
+    className={({isActive})=>isActive&&"text-green-500  border border-green-500"}>Home</NavLink></li>
+    <li><NavLink to={"/books"} className={({isActive})=>isActive&&"text-green-500  border border-green-500"} >Listed Books</NavLink></li>
     <li><NavLink to={"/pages-to-read"}>Pages to Read</NavLink></li>
     </>
     return (
-        <div>
-            <div className="navbar bg-base-100 shadow-sm">
+        <div className=" bg-base-100 shadow-sm ">
+            <div className="navbar container m-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,8 +28,9 @@ const Navbar = () => {
                        {navList}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
+                <div className="navbar-end gap-3">
+                   <button className="btn btn-success">Sign In</button>
+                   <button className="btn btn-accent">Sign Up</button>
                 </div>
             </div>
         </div>
