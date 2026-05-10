@@ -16,20 +16,20 @@ const BookDetails = () => {
   );
   // console.log(expectedBook, "expectedBook");
   const {
-    bookId,
+    
     bookName,
     author,
     image,
     review,
     totalPages,
-    rating,
+    
     category,
     tags,
     publisher,
     yearOfPublishing,
   } = expectedBook;
 
- 
+
 
   return (
     <div className="grid md:grid-cols-2 bg-base-100 shadow-xl container mx-auto my-8 rounded-4xl">
@@ -64,13 +64,13 @@ const BookDetails = () => {
           <div className="flex items-center gap-2">
             <button
               className="btn"
-             
+
             >
               Mark as Read
             </button>
             <button
               className="btn btn-primary"
-             
+
             >
               Add to Wishlist
             </button>

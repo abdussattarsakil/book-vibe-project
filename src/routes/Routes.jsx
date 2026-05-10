@@ -19,9 +19,9 @@ export const router = createBrowserRouter([
         Component: Books
       },
       {
-        path:"/bookDetails/:bookId",
+        path: "/bookDetails/:bookId",
         Component: BookDetails,
-        loader:()=>fetch("/booksData.json")
+        loader: () => fetch("/booksData.json")
       }
     ],
     errorElement: <ErrorPage />
