@@ -32,8 +32,8 @@ const BookDetails = () => {
   } = expectedBook;
 
 
-  const bookContext=useContext(BookContext);
-  console.log(bookContext,"bookContext");
+  const {handleMarkAsRead}=useContext(BookContext);
+  
 
 
   return (
@@ -69,13 +69,13 @@ const BookDetails = () => {
           <div className="flex items-center gap-2">
             <button
               className="btn"
-
+              onClick={()=> handleMarkAsRead(expectedBook)}
             >
               Mark as Read
             </button>
             <button
               className="btn btn-primary"
-
+              
             >
               Add to Wishlist
             </button>
