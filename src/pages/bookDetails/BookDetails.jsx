@@ -1,5 +1,7 @@
 
+import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router";
+import { BookContext } from "../../Context/BookContext";
 
 
 // const booksPromise = fetch("/booksData.json").then((res) => res.json());
@@ -29,6 +31,9 @@ const BookDetails = () => {
     yearOfPublishing,
   } = expectedBook;
 
+
+  const bookContext=useContext(BookContext);
+  console.log(bookContext,"bookContext");
 
 
   return (
