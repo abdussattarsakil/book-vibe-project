@@ -23,7 +23,8 @@ const BookProvider = ({ children }) => {
 
 
     const data = {
-        handleMarkAsRead
+        handleMarkAsRead,
+        storeBook
     }
 
 
