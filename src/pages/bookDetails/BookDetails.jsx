@@ -1,7 +1,9 @@
 
+
 import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { BookContext } from "../../Context/BookContext";
+
 
 
 // const booksPromise = fetch("/booksData.json").then((res) => res.json());
@@ -18,13 +20,13 @@ const BookDetails = () => {
   );
   // console.log(expectedBook, "expectedBook");
   const {
-    
+
     bookName,
     author,
     image,
     review,
     totalPages,
-    
+
     category,
     tags,
     publisher,
@@ -32,8 +34,10 @@ const BookDetails = () => {
   } = expectedBook;
 
 
-  const {handleMarkAsRead}=useContext(BookContext);
-  
+
+  const { handleMarkReadBook, handleWishBook } = useContext(BookContext);
+
+
 
 
   return (
@@ -69,13 +73,13 @@ const BookDetails = () => {
           <div className="flex items-center gap-2">
             <button
               className="btn"
-              onClick={()=> handleMarkAsRead(expectedBook)}
+              onClick={() => handleMarkReadBook(expectedBook)}
             >
               Mark as Read
             </button>
             <button
               className="btn btn-primary"
-              
+              onClick={() => handleWishBook(expectedBook)}
             >
               Add to Wishlist
             </button>

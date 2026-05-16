@@ -2,36 +2,44 @@ import { createContext, useState } from "react";
 
 export const BookContext = createContext();
 
-const BookProvider = ({ children }) => {
-    console.log(children, "book context children");
+const ListedBooks = ({ children }) => {
 
-    const [storeBook, setStoreBook] = useState([])
+    const [readBooks, setReadBook] = useState([]);
 
-    const handleMarkAsRead = (exceptedBook) => {
-
-        const isExistBook = storeBook.find(book=>book.bookId === exceptedBook.bookId);
-
-        if(isExistBook){
-            alert("the book is already exist")
+    const handleMarkReadBook = book => {
+        const isExist = readBooks.find(readBook => readBook.bookId === book.bookId)
+        if (isExist) {
+            alert('this book is already read')
         }
-        else{
-            setStoreBook([...storeBook,exceptedBook]);
-            alert("successfully added this book")
+        else {
+            setReadBook([...readBooks, book])
+            alert('successfully added')
         }
+    }
 
-   }
+    const [wishBooks, setWishBook] = useState([]);
+
+    const handleWishBook = book => {
+        const isExist = readBooks.find(readBook => readBook.bookId === book.bookId)
+        if (isExist) {
+            alert('this book is already read')
+        }
+        else {
+            setWishBook([...wishBooks, book])
+            alert('successfully added')
+        }
+    }
 
 
     const data = {
-        handleMarkAsRead,
-        storeBook
+        handleMarkReadBook,
+        handleWishBook,
+        readBooks,
+        wishBooks
     }
-
 
     return <BookContext.Provider value={data}>
         {children}
     </BookContext.Provider>
-};
-
-
-export default BookProvider;
+}
+export default ListedBooks;
