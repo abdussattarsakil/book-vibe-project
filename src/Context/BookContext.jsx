@@ -9,7 +9,8 @@ const ListedBooks = ({ children }) => {
     const handleMarkReadBook = book => {
         const isExist = readBooks.find(readBook => readBook.bookId === book.bookId)
         if (isExist) {
-            alert('this book is already read')
+            alert('this book is already read list')
+            return;
         }
         else {
             setReadBook([...readBooks, book])
@@ -20,9 +21,10 @@ const ListedBooks = ({ children }) => {
     const [wishBooks, setWishBook] = useState([]);
 
     const handleWishBook = book => {
-        const isExist = readBooks.find(readBook => readBook.bookId === book.bookId)
+        const isExist = wishBooks.find(wishBook => wishBook.bookId === book.bookId)
         if (isExist) {
-            alert('this book is already read')
+            alert('this book is already wishlist')
+            return;
         }
         else {
             setWishBook([...wishBooks, book])

@@ -1,23 +1,25 @@
-import { useContext } from "react";
-import { BookContext } from "../../Context/BookContext";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import ReadList from "../../components/ListBook/ReadList";
+import WishList from "../../components/ListBook/WishList";
 
 const Books = () => {
 
-const {readBooks}=useContext(BookContext)
-
     return (
-        <div className="">
-            <h1 className="text-5xl text-center mb-10"> Listed Books</h1>
-            {
-                readBooks.map(book=>(
-                    <div className="shadow-2xl bg-base-200 container mx-auto p-5 text-2xl mb-5">
-                <h1>
-                    {book.bookName}
-                </h1>
-            </div>
-                ))
-            }
+        <div className="container mx-auto mt-10">
+            <Tabs>
+                <TabList>
+                    <Tab>Read List</Tab>
+                    <Tab>Wish List</Tab>
+                </TabList>
 
+                <TabPanel>
+                    <ReadList></ReadList>
+                </TabPanel>
+                <TabPanel>
+                    <WishList></WishList>
+                </TabPanel>
+            </Tabs>
         </div>
     );
 };
