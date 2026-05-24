@@ -2,7 +2,20 @@ import { use } from "react";
 import BookCard from "../shared/BookCard/BookCard";
 
 
-const booksPromise = fetch("/booksData.json").then((res) => res.json());
+// const booksPromise = fetch("/booksData.json").then((res) => res.json());
+
+const booksPromise = (async () => {
+
+    const res = await fetch("/booksData.json");
+    const data = await res.json();
+
+    // 1 second delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    return data;
+
+})();
+
 
 const AllBooks = () => {
 
